@@ -21,10 +21,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <div class="card card-body bg-light">
           <h6>Test Subject ID No.:</h6>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          <select id="selDataset" onchange="optionChanged(this.value)">
+            <option disabled selected>Select ID</option>
+          </select>
         </div>
         <div class="card card-primary">
           <div class="card-header">
@@ -36,19 +38,20 @@
       <div class="col-md-5">
         <div id="bar"></div>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-4">
         <div id="gauge"></div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
+        <hr />
         <div id="bubble"></div>
       </div>
     </div>
   </div>
 
   <script src="./static/js/app.js"></script>
-  <script src="./static/js/bonus.js"></script>
+  <!--<script src="./static/js/bonus.js"></script>-->
 
 </body>
 
