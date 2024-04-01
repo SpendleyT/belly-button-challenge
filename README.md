@@ -37,9 +37,7 @@ Complete the following steps:
 <li>Deploy your app to a free static page hosting service, such as GitHub Pages. Submit the links to your deployment and your GitHub repo. Ensure that your repository has regular commits and a thorough README.md file</li>
 </ol>
 
-<h3>Advanced Challenge Assignment (Optional with no extra points earning)</h3>
-
-The following task is advanced and therefore optional.
+<h3>Advanced Challenge Assignment</h3>
 <ul>
 <li>Adapt the Gauge Chart from https://plot.ly/javascript/gauge-charts/Links to an external site. to plot the weekly washing frequency of the individual.</li>
 <li>You will need to modify the example gauge code to account for values ranging from 0 through 9.</li>
