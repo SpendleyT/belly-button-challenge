@@ -101,11 +101,11 @@ function plotGaugeGraph(meta) {
           title: { text: "Belly Button Washing Frequency", font: { size: 24 } },
           gauge: {
             axis: { range: [null, 10], tickwidth: 1, tickcolor: "darkblue" },
-            bar: { color: "white", thickness: 0.4 },
+            bar: { color: "white", thickness: 0 },
             bgcolor: "white",
             borderwidth: 0,
             bordercolor: "gray",
-            showticklabels: false,
+            showticklabels: true,
             steps: [
               { range: [0, 1], color: "#1ab4b8"},
               { range: [1, 2], color: "#1aacb8"},
@@ -122,7 +122,48 @@ function plotGaugeGraph(meta) {
         }
       ];
 
-      var layout = {
+      // needle
+      let degrees = parseInt(frequency)*19, radius = .75;
+      let radians = degrees * Math.PI / 180;
+      let x = -1 * radius * Math.cos(radians);
+      let y = radius * Math.sin(radians);
+
+
+      let layout = {
+        annotations: [
+          {
+            ax: 0,
+            ay: 0,
+            axref: 'x',
+            ayref: 'y',
+            x: x,
+            y: y,
+            xref: 'x',
+            yref: 'y',
+            showarrow: true,
+            arrowhead: 9,
+          }
+        ],
+        shapes: [
+          // 1st highlight during Feb 4 - Feb 6
+          {
+              type: 'rect',
+              // x-reference is assigned to the x-values
+              xref: 'x',
+              // y-reference is assigned to the plot paper [0,1]
+              yref: 'paper',
+              x0: '2015-02-04',
+              y0: 0,
+              x1: '2015-02-06',
+              y1: 1,
+              fillcolor: '#d3d3d3',
+              opacity: 0.2,
+              line: {
+                  width: 0
+              }
+          }],
+        xaxis: {visible: false, range: [-1, 1]},
+        yaxis: {visible: false, range: [0, 1]},
         width: 400,
         height: 300,
         margin: { t: 25, r: 25, l: 25, b: 25 },
